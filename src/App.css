@@ -26,6 +26,10 @@ input {
   padding-left: 7px;
 }
 
+.red {
+  border-color: red;
+}
+
 .register {
   margin-top: 40px;
   background-color: #5c48d4;

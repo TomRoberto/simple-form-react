@@ -9,6 +9,8 @@ const Form = ({
   setupConfirmPassword,
   identicalPasswords,
   setupIdenticalPasswords,
+  samePasswords,
+  setupSamePasswords,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,20 +47,34 @@ const Form = ({
       />
       <p>Password</p>
       <input
+        className={!samePasswords && "red"}
         value={password}
         type="password"
         placeholder="AzErTy123"
         onChange={(event) => {
           setupPassword(event.target.value);
+
+          if (password === confirmPassword) {
+            setupSamePasswords(true);
+          } else {
+            setupSamePasswords(false);
+          }
         }}
       />
       <p>Comfirm your password</p>
       <input
+        className={!samePasswords && "red"}
         value={confirmPassword}
         type="password"
         placeholder="AzErTy123"
         onChange={(event) => {
           setupConfirmPassword(event.target.value);
+          setupSamePasswords(false);
+          if (password === confirmPassword) {
+            setupSamePasswords(true);
+          } else {
+            setupSamePasswords(false);
+          }
         }}
       />
       <br />
