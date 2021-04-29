@@ -62,7 +62,7 @@ const Form = ({
         }}
       />
       <br />
-      <input type="submit" />
+      <input className="register" type="submit" value="Register" />
     </form>
   );
 };

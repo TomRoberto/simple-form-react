@@ -5,3 +5,57 @@
 .hidden {
   display: none;
 }
+
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+p {
+  margin: 20px 0 5px 0;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+  border-color: grey;
+  border-style: solid;
+  background-color: #fdf9f9;
+  padding-left: 7px;
+}
+
+.register {
+  margin-top: 40px;
+  background-color: #5c48d4;
+  border: none;
+  color: white;
+}
+
+form {
+  text-align: center;
+}
+
+.rectangle {
+  background-color: #f2f2f2;
+  padding: 20px 20px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.step-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit {
+  margin-top: 20px;
+  height: 40px;
+  width: 400px;
+  background-color: #5c48d4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}

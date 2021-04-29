@@ -11,7 +11,7 @@ function App() {
   const [identicalPasswords, setupIdenticalPasswords] = useState(false);
 
   return (
-    <div>
+    <div className="app">
       <Form
         name={name}
         email={email}

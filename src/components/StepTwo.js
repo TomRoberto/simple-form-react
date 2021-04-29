@@ -7,19 +7,22 @@ const StepTwo = ({
 }) => {
   return (
     <div className={identicalPasswords ? "display" : "hidden"}>
-      <h1>Results</h1>
-      <div>
-        <p>Name : {name}</p>
-        <p>Email : {email} </p>
-        <p>Password : {password}</p>
+      <div className="step-two">
+        <h1>Results</h1>
+        <div className="rectangle">
+          <p>Name : {name}</p>
+          <p>Email : {email} </p>
+          <p>Password : {password}</p>
+        </div>
+        <button
+          className="edit"
+          onClick={() => {
+            setupIdenticalPasswords(false);
+          }}
+        >
+          Edit your informations
+        </button>
       </div>
-      <button
-        onClick={() => {
-          setupIdenticalPasswords(false);
-        }}
-      >
-        Edit your informations
-      </button>
     </div>
   );
 };
