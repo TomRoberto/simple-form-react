@@ -2,6 +2,9 @@ import "./App.css";
 import Form from "./components/Form";
 import StepTwo from "./components/StepTwo";
 import { useState } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+library.add(faEye);
 
 function App() {
   const [name, setupName] = useState("");
@@ -10,7 +13,7 @@ function App() {
   const [confirmPassword, setupConfirmPassword] = useState("");
   // in order to go to next "page"
   const [identicalPasswords, setupIdenticalPasswords] = useState(false);
-  // in order to make th input red if they are not the same
+  // in order to make the input red if they are not the same
   const [samePasswords, setupSamePasswords] = useState(true);
 
   return (

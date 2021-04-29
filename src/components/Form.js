@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+
 const Form = ({
   name,
   email,
@@ -20,6 +23,15 @@ const Form = ({
       setupIdenticalPasswords(true);
     }
   };
+
+  if (password === confirmPassword) {
+    setupSamePasswords(true);
+  } else {
+    setupSamePasswords(false);
+  }
+
+  const [seePassword, setupSeePassword] = useState(false);
+  const [seeConfirmPassword, setupSeeConfirmPassword] = useState(false);
 
   return (
     <form
@@ -45,38 +57,55 @@ const Form = ({
           setupEmail(event.target.value);
         }}
       />
-      <p>Password</p>
-      <input
-        className={!samePasswords && "red"}
-        value={password}
-        type="password"
-        placeholder="AzErTy123"
-        onChange={(event) => {
-          setupPassword(event.target.value);
+      <p>Password </p>
+      <div>
+        <input
+          autoComplete="false"
+          className={!samePasswords && "red"}
+          value={password}
+          type={seePassword ? "text" : "password"}
+          placeholder="AzErTy123"
+          onChange={(event) => {
+            setupPassword(event.target.value);
+          }}
+        />
+        <FontAwesomeIcon
+          icon="eye"
+          className="eye"
+          onClick={() => {
+            if (seePassword === true) {
+              setupSeePassword(false);
+            } else {
+              setupSeePassword(true);
+            }
+          }}
+        />
+      </div>
 
-          if (password === confirmPassword) {
-            setupSamePasswords(true);
-          } else {
-            setupSamePasswords(false);
-          }
-        }}
-      />
       <p>Comfirm your password</p>
-      <input
-        className={!samePasswords && "red"}
-        value={confirmPassword}
-        type="password"
-        placeholder="AzErTy123"
-        onChange={(event) => {
-          setupConfirmPassword(event.target.value);
-          setupSamePasswords(false);
-          if (password === confirmPassword) {
-            setupSamePasswords(true);
-          } else {
-            setupSamePasswords(false);
-          }
-        }}
-      />
+      <div>
+        <input
+          className={!samePasswords && "red"}
+          value={confirmPassword}
+          type={seeConfirmPassword ? "text" : "password"}
+          placeholder="AzErTy123"
+          onChange={(event) => {
+            setupConfirmPassword(event.target.value);
+          }}
+        />
+        <FontAwesomeIcon
+          icon="eye"
+          className="eye"
+          onClick={() => {
+            if (seeConfirmPassword === true) {
+              setupSeeConfirmPassword(false);
+            } else {
+              setupSeeConfirmPassword(true);
+            }
+          }}
+        />
+      </div>
+
       <br />
       <input className="register" type="submit" value="Register" />
     </form>
