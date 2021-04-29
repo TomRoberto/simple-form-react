@@ -1,5 +1,6 @@
 import "./App.css";
 import Form from "./components/Form";
+import StepTwo from "./components/StepTwo";
 import { useState } from "react";
 
 function App() {
@@ -20,6 +21,13 @@ function App() {
         setupEmail={setupEmail}
         setupPassword={setupPassword}
         setupConfirmPassword={setupConfirmPassword}
+        identicalPasswords={identicalPasswords}
+        setupIdenticalPasswords={setupIdenticalPasswords}
+      />
+      <StepTwo
+        name={name}
+        email={email}
+        password={password}
         identicalPasswords={identicalPasswords}
         setupIdenticalPasswords={setupIdenticalPasswords}
       />

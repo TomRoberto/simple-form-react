@@ -7,7 +7,7 @@ const Form = ({
   setupEmail,
   setupPassword,
   setupConfirmPassword,
-  identicalPassWords,
+  identicalPasswords,
   setupIdenticalPasswords,
 }) => {
   const handleSubmit = (event) => {
@@ -21,7 +21,7 @@ const Form = ({
 
   return (
     <form
-      className={identicalPassWords ? "hidden" : "display"}
+      className={identicalPasswords ? "hidden" : "display"}
       onSubmit={handleSubmit}
     >
       <h1>Create account</h1>
