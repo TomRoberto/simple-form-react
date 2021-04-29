@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./components/Form";
+import { useState } from "react";
 
 function App() {
+  const [name, setupName] = useState("");
+  const [email, setupEmail] = useState("");
+  const [password, setupPassword] = useState("");
+  const [confirmPassword, setupConfirmPassword] = useState("");
+  const [identicalPasswords, setupIdenticalPasswords] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form
+        name={name}
+        email={email}
+        password={password}
+        confirmPassword={confirmPassword}
+        setupName={setupName}
+        setupEmail={setupEmail}
+        setupPassword={setupPassword}
+        setupConfirmPassword={setupConfirmPassword}
+        identicalPasswords={identicalPasswords}
+        setupIdenticalPasswords={setupIdenticalPasswords}
+      />
     </div>
   );
 }
